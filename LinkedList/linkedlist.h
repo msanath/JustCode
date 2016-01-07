@@ -9,7 +9,7 @@ class LinkedList
 		LinkedList();
 		bool AddItem(int);
 		bool DeleteItem(int);
-		bool CheckItem();
+		bool CheckItem(int);
 		void PrintList();
 		~LinkedList();
 	private:

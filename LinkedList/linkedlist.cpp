@@ -44,6 +44,36 @@ bool LinkedList::AddItem(int value)
 	return 1;
 }
 
+
+bool LinkedList::DeleteItem(int value)
+{
+	Node* curr = this->firstNode;
+	Node* prev = NULL;
+
+	while(curr != NULL)
+	{
+		if(curr->value == value)
+		{
+			if(prev == NULL)
+			{
+				this->firstNode = curr->next;
+			}
+			else
+			{
+				prev->next = curr->next;
+			}
+			delete curr;
+			this->nodeCount--;
+			return 1;
+		}
+		prev = curr;
+		curr = curr->next;
+	}
+
+	return 0;
+}
+
+
 void LinkedList::PrintList()
 {
 	cout << "Count of Items : " << this->nodeCount << endl;
